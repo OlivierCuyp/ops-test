@@ -1,6 +1,6 @@
 version: "3.1"
 services:
-  app2:
+  app1:
     image: hello-world
     networks:
       - frontend
@@ -16,13 +16,22 @@ services:
       restart_policy:
         condition: any
         max_attempts: 10
-      labels:
-        traefik.backend.loadbalancer.swarm: "false"
-        traefik.frontend.rule: "Host:hello.garamundo.pro"
-        traefik.frontend.passHostHeader: "true"
-        traefik.frontend.entryPoints: "http"
-        traefik.port: "80"
-        traefik.docker.network: "frontend"
+  app2:
+    image: hello-world:linux
+    networks:
+      - frontend
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          memory: 64M
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: any
+        max_attempts: 10
 
 networks:
   frontend:
