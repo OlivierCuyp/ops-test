@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   app2:
-    image: hello-world2
+    image: hello-world
     networks:
       - frontend
     deploy:
