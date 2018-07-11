@@ -1,7 +1,7 @@
-version: "3.1"
+version: '3.1'
 services:
   app1:
-    image: hello-world
+    image: 'hello-world:linux'
     networks:
       - frontend
     deploy:
@@ -17,7 +17,7 @@ services:
         condition: any
         max_attempts: 10
   app2:
-    image: hello-world:linux
+    image: 'hello-world:linux'
     networks:
       - frontend
     deploy:
@@ -32,7 +32,6 @@ services:
       restart_policy:
         condition: any
         max_attempts: 10
-
 networks:
   frontend:
     external: true
