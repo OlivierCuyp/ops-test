@@ -1,22 +1,6 @@
 version: '3.1'
 services:
-  app11:
-    image: 'hello-world:linux'
-    networks:
-      - frontend
-    deploy:
-      mode: replicated
-      replicas: 1
-      resources:
-        limits:
-          memory: 64M
-      update_config:
-        parallelism: 1
-        delay: 10s
-      restart_policy:
-        condition: any
-        max_attempts: 10
-  app21:
+  app:
     image: 'hello-world:linux'
     networks:
       - frontend
