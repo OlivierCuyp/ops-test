@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   app11:
-    image: hello-world
+    image: 'hello-world:linux'
     networks:
       - frontend
     deploy:
@@ -17,7 +17,7 @@ services:
         condition: any
         max_attempts: 10
   app21:
-    image: hello-world:linux
+    image: 'hello-world:linux'
     networks:
       - frontend
     deploy:
