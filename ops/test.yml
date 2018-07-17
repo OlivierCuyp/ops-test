@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   app:
-    image: 'hello-world:linux'
+    image: 'hello-world:latest'
     networks:
       - frontend
     deploy:
