@@ -3,7 +3,7 @@ services:
   app:
     image: 'oliviercuyp/hello-js:release-1.0.0'
     ports:
-      - '3020'
+      - '3000:3000'
     networks:
       - frontend
     deploy:
